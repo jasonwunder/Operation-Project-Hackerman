@@ -31,4 +31,12 @@ print("The entered terms are: \n", term_list)
 
 # Create a password generator that intergrates the list that was created by the user.
 
+#fubctions that make every other variable upper case or lower case
+#loop that only upper cases first letter
+#funtions that add all randomly generated birthdates to the end or begining of the element 
+#the birthdates can come in 3 versions (1993) or (042893) or (93) len of bday appendix shoulbd be 2 or 4 or 6
+#fucntions that add 1 random symbol to the begininng or end of element
+
+
+#common symbols _ or ! or # or @ or O for 0's
 
