@@ -25,7 +25,7 @@ if syms:
     all += symbols
 
 # set the length of the passwords and the amount of passwords to be generated
-length = 15
+length = 25
 amount = 10
 
 # join the all string with a empty string to create the passwords. then print the new variable
