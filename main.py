@@ -1,4 +1,3 @@
-from curses import termattrs
 import sys
 import os
 
