@@ -27,4 +27,9 @@ for i in range(0, n):
     term_list.append(input())
 print("The entered terms are: \n", term_list)
 
+# Have user validate if information is correct. If it is not have them enter the terms again.
+
+
+# Create a password generator that intergrates the list that was created by the user.
+
 
