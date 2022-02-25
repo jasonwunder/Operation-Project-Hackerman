@@ -16,7 +16,6 @@ digits = "0123456789"
 symbols = "!#$%&()*+,-./:;<=>?@[\\]^_`{|}~"
 
 # Create a list of the user provied terms
-
 term_list = []
 # Input number of elements
 n = int(input("Enter the number of terms you are using: "))
