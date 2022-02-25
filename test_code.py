@@ -32,17 +32,18 @@ if pet == "y":
 
 dob = input("Do you know the targets DOB? [y/n] ")
 if dob == "y":
-    dob_answ = input(
-        "Enter DOB in either of the following formats: [mmddyy] [mmddyyyy] [yy] [yyyy]: ")
+    dob_answ = input("Enter DOB in either of the following formats: [mmddyy] [mmddyyyy] [yy] [yyyy]: ")
     term_list.append(dob_answ)
 else:
     pass
 print("The terms you entered are: ", term_list)
-n = int(input("Enter the number of terms you are using: "))
-for i in range(0, n):
-    print("Enter term number-{}: ".format(i + 1))
-    # Add the element to the list
-    term_list.append(input())
+more_terms = input("Are there any other terms you want to add? [y/n]")
+if more_terms == "y":
+    n = int(input("Enter the number of terms: "))
+    for i in range(0, n):
+        print("Enter term number-{}: ".format(i + 1))
+        # Add the element to the list
+        term_list.append(input())
 print("The entered terms are: \n", term_list)
 # Have user validate if information is correct. If it is not have them enter the terms again.
 
@@ -51,7 +52,7 @@ print("The entered terms are: \n", term_list)
 # Create a password generator that intergrates the list that was created by the user.
 
 
-
+'''''
 #NOTES*******
 ###################################################################################### 
 
@@ -137,3 +138,4 @@ def mock(s):
 
 
 print(mock("Hello word program"))
+'''
