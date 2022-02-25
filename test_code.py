@@ -11,7 +11,9 @@ if (sys.version_info < (3, 5)):
     sys.exit(1)
 
 # Create a function for the user provied terms
-def term_list():
+
+
+def usr_input():
     term_list = []
     first_name = input("Enter targets first name: ")
     term_list.append(first_name)
@@ -30,14 +32,21 @@ def term_list():
     if pet == "y":
         pet_name = input("Enter pets name: ")
         term_list.append(pet_name)
-
+    # Check for DOB
     dob = input("Do you know the targets DOB? [y/n] ")
     if dob == "y":
-        dob_answ = input("Enter DOB in either of the following formats: [mmddyy] [mmddyyyy] [yy] [yyyy]: ")
-        term_list.append(dob_answ)
+        month = input("Enter the month of the DOB [mm]: ")
+        term_list.append(month)
+        day = input("Enter the day of the DOB [dd]: ")
+        term_list.append(day)
+        year = input("Enter the year of the DOB [yyyy]: ")
+        term_list.append(year)
+        year_short = input("Enter the year of the DOB again [yy]: ")
+        term_list.append(year_short)
     else:
         pass
     print("The terms you entered are: ", term_list)
+    # Check for more terms
     more_terms = input("Are there any other terms you want to add? [y/n]")
     if more_terms == "y":
         n = int(input("Enter the number of terms: "))
@@ -48,7 +57,7 @@ def term_list():
     print("The entered terms are: \n", term_list)
 
 
-
+print(usr_input())
 
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
@@ -58,7 +67,7 @@ def term_list():
 # Create a password generator that intergrates the list that was created by the user.
 
 
-'''''
+'''
 #NOTES*******
 ###################################################################################### 
 
