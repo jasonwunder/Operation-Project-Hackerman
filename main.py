@@ -54,7 +54,6 @@ def term_list():
             term_list.append(input())
     print("The entered terms are: \n", term_list)
 
-print(term_list())
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
 
