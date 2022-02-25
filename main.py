@@ -6,8 +6,6 @@ if (sys.version_info < (3, 0)):
     print('Error: Operation Project Hackerman only works with Python 3')
     sys.exit(1)
 
-#if sys.version_info < 3:
-#    raise Exception("Sorry, Operation Project Hackerman only works with Python 3 ")
 
 # Create variables for what needs to be used in the password generator.
 uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -39,10 +37,10 @@ def term_list():
     # Check for DOB
     dob = input("Do you know the targets DOB? [y/n] ")
     if dob == "y":
-        dob_answ = input("Enter DOB in either of the following formats: [mmddyy] [mmddyyyy] [yy] [yyyy]: ")
-        term_list.append(dob_answ)
+       dob_answ = input("Enter DOB in either of the following formats: [mmddyy] [mmddyyyy] [yy] [yyyy]: ")
+       term_list.append(dob_answ)
     else:
-        pass
+       pass
     print("The terms you entered are: ", term_list)
     # Check for more terms
     more_terms = input("Are there any other terms you want to add? [y/n]")
