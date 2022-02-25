@@ -16,19 +16,20 @@ symbols = "!#$%&()*+,-./:;<=>?@[\\]^_`{|}~"
 # Function for creating a user generated list
 def usr_input():
     term_list = []
+    # Check for first name
     first_name = input("Enter targets first name: ")
     term_list.append(first_name)
-
+    # Check for last name
     last_name = input("Enter targets last name: ")
     term_list.append(last_name)
-
+    # Check for nickname
     nickname = input("Does the target have a known nickname? [y/n]")
     if nickname == "y":
         nn = input("Enter the targets nickname: ")
         term_list.append(nn)
     else:
         pass
-
+    # Check for pet
     pet = input("Does the target have a pet? [y/n]")
     if pet == "y":
         pet_name = input("Enter pets name: ")
@@ -56,6 +57,7 @@ def usr_input():
             # Add the element to the list
             term_list.append(input())
     print("The entered terms are: \n", term_list)
+
 
 
 
