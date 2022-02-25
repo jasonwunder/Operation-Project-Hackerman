@@ -54,10 +54,16 @@ def usr_input():
             print("Enter term number {}: ".format(i + 1))
             # Add the element to the list
             term_list.append(input())
+        return term_list
     print("The entered terms are: \n",term_list)
 
+# Create function that takes in master list and combines elements together 
+def term_combine():
+    list = usr_input()
+    for element in list:
+        print(element)
 
-usr_input()
+term_combine()
 
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
