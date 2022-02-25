@@ -14,22 +14,21 @@ digits = "0123456789"
 symbols = "!#$%&()*+,-./:;<=>?@[\\]^_`{|}~"
 
 # Function for creating a user generated list
-def term_list():
+def usr_input():
     term_list = []
-    #Check for first name 
     first_name = input("Enter targets first name: ")
     term_list.append(first_name)
-    # Check for last name
+
     last_name = input("Enter targets last name: ")
     term_list.append(last_name)
-    # Check for nickname
+
     nickname = input("Does the target have a known nickname? [y/n]")
     if nickname == "y":
         nn = input("Enter the targets nickname: ")
         term_list.append(nn)
     else:
         pass
-    # Check for pets name   
+
     pet = input("Does the target have a pet? [y/n]")
     if pet == "y":
         pet_name = input("Enter pets name: ")
@@ -37,20 +36,28 @@ def term_list():
     # Check for DOB
     dob = input("Do you know the targets DOB? [y/n] ")
     if dob == "y":
-       dob_answ = input("Enter DOB in either of the following formats: [mmddyy] [mmddyyyy] [yy] [yyyy]: ")
-       term_list.append(dob_answ)
+        month = input("Enter the month of the DOB [mm]: ")
+        term_list.append(month)
+        day = input("Enter the day of the DOB [dd]: ")
+        term_list.append(day)
+        year = input("Enter the year of the DOB [yyyy]: ")
+        term_list.append(year)
+        year_short = input("Enter the year of the DOB again [yy]: ")
+        term_list.append(year_short)
     else:
-       pass
+        pass
     print("The terms you entered are: ", term_list)
     # Check for more terms
     more_terms = input("Are there any other terms you want to add? [y/n]")
     if more_terms == "y":
         n = int(input("Enter the number of terms: "))
         for i in range(0, n):
-            print("Enter term number-{}: ".format(i + 1))
+            print("Enter term number {}: ".format(i + 1))
             # Add the element to the list
             term_list.append(input())
     print("The entered terms are: \n", term_list)
+
+
 
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
