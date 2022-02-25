@@ -10,9 +10,6 @@ if (sys.version_info < (3, 5)):
     print('Error: Operation Project Hackerman only works with Python 3')
     sys.exit(1)
 
-# if sys.version_info < 3:
-#    raise Exception("Sorry, Operation Project Hackerman only works with Python 3 ")
-
 # Create a function for the user provied terms
 term_list = []
 first_name = input("Enter targets first name: ")
