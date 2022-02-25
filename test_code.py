@@ -51,13 +51,13 @@ def usr_input():
     if more_terms == "y":
         n = int(input("Enter the number of terms: "))
         for i in range(0, n):
-            print("Enter term number-{}: ".format(i + 1))
+            print("Enter term number {}: ".format(i + 1))
             # Add the element to the list
             term_list.append(input())
-    print("The entered terms are: \n", term_list)
+    print("The entered terms are: \n",term_list)
 
 
-print(usr_input())
+usr_input()
 
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
