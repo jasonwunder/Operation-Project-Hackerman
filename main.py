@@ -1,5 +1,6 @@
 import sys
 import os
+import itertools
 
 # check the version of python that the user is using. if older than version 3, print an error message.
 if (sys.version_info < (3, 0)):
@@ -25,8 +26,8 @@ def usr_input():
     # Check for nickname
     nickname = input("Does the target have a known nickname? [y/n]")
     if nickname == "y":
-        nn = input("Enter the targets nickname: ")
-        term_list.append(nn)
+        nn_answ = input("Enter the targets nickname: ")
+        term_list.append(nn_answ)
     else:
         pass
     # Check for pet
@@ -57,6 +58,13 @@ def usr_input():
             # Add the element to the list
             term_list.append(input())
     print("The entered terms are: \n", term_list)
+    term_combine(term_list)
+
+# Create function that takes in master list and combines elements together 
+def term_combine(term_list):
+    combine_list = []
+    combine_list = list(''.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(combine_list)
 
 
 
