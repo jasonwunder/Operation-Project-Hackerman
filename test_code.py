@@ -130,27 +130,37 @@ def carrot_sign(term_list):
     carrot_sign_list = list('^'.join(entry) for entry in itertools.product(term_list, repeat=2))
     print(carrot_sign_list)
 
+# Create a function that caps the second word in the list 
 
+# Create a function that adds syms to end
 
+# Create a function that adds a sym to begaining 
+
+# Create a function that changes "a" to "@"
+
+# Create a function that changes "o" to "0"
+
+# Create a function that changes "e" to "3"
+
+# Create a function that changes "s" to "$"
+
+# Create a function that changes "b" to "9"
     
+# Create a function that changes "l" to "1"
 
+# Create a function that changes "r" to "4"
+
+# combine all the lists togehter into one big list 
+
+# Create a new list that caps the first letter in the elements of the list 
+
+# Combine the lists again 
+
+# output that list onto a file as a wordlist
 
 
 usr_input()
         
-
-
-
-
-
-
-
-# Have user validate if information is correct. If it is not have them enter the terms again.
-
-# create a function that looks for date formats within the list
-
-# Create a password generator that intergrates the list that was created by the user.
-
 
 
 
