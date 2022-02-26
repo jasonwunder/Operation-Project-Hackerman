@@ -64,11 +64,26 @@ def term_combine(term_list):
     combine_list = []
     combine_list = list(''.join(entry) for entry in itertools.product(term_list, repeat=2))
     print(combine_list)
-    
+    cap_char1(combine_list)
+
+# Create a list that takes in combine_list a caps the first letter of the element 
+def cap_char1(combine_list):
+    cap1_list = []
+    for elem in combine_list:
+        cap1_list.append(elem.capitalize())
+    print(cap1_list)
 
 usr_input()
 
-# Create a function that takes the new list and modifies it
+# Create a function that adds "_" between the two terms 
+
+
+        
+
+
+
+
+
 
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
