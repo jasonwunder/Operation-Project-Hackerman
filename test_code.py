@@ -94,7 +94,7 @@ def usr_input():
     carrot_sign(term_list)
     both_cap(term_list)
     # cap2(term_list)
-    a_change_at(term_list)
+    a_change_at(term_list, "a", "@")
     zero_change(term_list)
     three_change(term_list)
     dollar_sign(term_list)
@@ -140,6 +140,7 @@ def cap_char1(combine_list):
         cap1_list.append(elem.capitalize())
     print(cap1_list)
 
+# Shorten into on function with a tuple and for loop
 # Create a function that adds "_" between the two terms
 def underscore(term_list):
     underscore_list = []
@@ -195,12 +196,13 @@ def carrot_sign(term_list):
         for entry in itertools.product(term_list, repeat=2))
     print(carrot_sign_list)
 
+# Shorten into on function with a tuple and for loop
 # Create a function that changes "a" to "@"
-def a_change_at(term_list):
-    at_list = term_list.copy()
-    for idx, value in enumerate(at_list):
-        at_list[idx] = value.replace("a", "@")
-    print(at_list)
+def a_change_at(term_list, old_value, new_value):
+    new_list = term_list.copy()
+    for idx, value in enumerate(new_list):
+        new_list[idx] = value.replace(old_value, new_value)
+    print(new_list)
 # Create a function that changes "o" to "0"
 def zero_change(term_list):
     zero_list = term_list.copy()
