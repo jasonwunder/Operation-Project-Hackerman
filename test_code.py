@@ -93,7 +93,16 @@ def usr_input():
     percent_sign(term_list)
     carrot_sign(term_list)
     both_cap(term_list)
-    cap2(term_list)
+    # cap2(term_list)
+    a_change_at(term_list)
+    zero_change(term_list)
+    three_change(term_list)
+    dollar_sign(term_list)
+    nine_change(term_list)
+    one_change(term_list)
+    four_change(term_list)
+    one_i_change(term_list)
+    seven_change(term_list)
 
 # Create function that takes in master list and combines elements together
 def term_combine(term_list):
@@ -114,15 +123,15 @@ def both_cap(term_list):
     print(cap_both_list)
 
 # Create a function that caps the second word in the list
-def cap2(term_list):
-    term_list_copy = term_list.copy()
-    cap2_list = []
-    for elem in term_list_copy:
-        cap2_list.append(elem.capitalize())
-    cap2_list = list(''.join(entry)
-        for entry in itertools.product(cap2_list, repeat=2))
-    cap2_list = cap2_list[0].lower() + cap2_list[1:]
-    print(cap2_list)
+# def cap2(term_list):
+#     term_list_copy = term_list.copy()
+#     cap2_list = []
+#     for elem in term_list_copy:
+#         cap2_list.append(elem.capitalize())
+#     cap2_list = list(''.join(entry)
+#         for entry in itertools.product(cap2_list, repeat=2))
+
+#     print(cap2_list)
 
 # Create a list that takes in combine_list a caps the first letter of the element
 def cap_char1(combine_list):
@@ -186,28 +195,63 @@ def carrot_sign(term_list):
         for entry in itertools.product(term_list, repeat=2))
     print(carrot_sign_list)
 
-
+# Create a function that changes "a" to "@"
+def a_change_at(term_list):
+    at_list = term_list.copy()
+    for idx, value in enumerate(at_list):
+        at_list[idx] = value.replace("a", "@")
+    print(at_list)
+# Create a function that changes "o" to "0"
+def zero_change(term_list):
+    zero_list = term_list.copy()
+    for idx, value in enumerate(zero_list):
+        zero_list[idx] = value.replace("o", "0")
+    print(zero_list)
+# Create a function that changes "e" to "3"
+def three_change(term_list):
+    three_list = term_list.copy()
+    for idx, value in enumerate(three_list):
+        three_list[idx] = value.replace("e", "3")
+    print(three_list)
+# Create a function that changes "s" to "$"
+def dollar_sign(term_list):
+    dollar_replace_list = term_list.copy()
+    for idx, value in enumerate(dollar_replace_list):
+        dollar_replace_list[idx] = value.replace("s", "$")
+    print(dollar_replace_list)
+# Create a function that changes "b" to "9"
+def nine_change(term_list):
+    nine_list = term_list.copy()
+    for idx, value in enumerate(nine_list):
+        nine_list[idx] = value.replace("b", "9")
+    print(nine_list)
+# Create a function that changes "l" to "1"
+def one_change(term_list):
+    one_list = term_list.copy()
+    for idx, value in enumerate(one_list):
+        one_list[idx] = value.replace("l", "1")
+    print(one_list)
+# Create a function that changes "r" to "4"
+def four_change(term_list):
+    four_list = term_list.copy()
+    for idx, value in enumerate(four_list):
+        four_list[idx] = value.replace("r", "4")
+    print(four_list)
+# Create a function that changes "i" to "1"
+def one_i_change(term_list):
+    one_i_list = term_list.copy()
+    for idx, value in enumerate(one_i_list):
+        one_i_list[idx] = value.replace("i", "4")
+    print(one_i_list)
+# Create a function that changes "t" to "7"
+def seven_change(term_list):
+    seven_list = term_list.copy()
+    for idx, value in enumerate(seven_list):
+        seven_list[idx] = value.replace("t", "7")
+    print(seven_list)
 # Create a function that adds syms to end
 
 # Create a function that adds a sym to begaining
-
-# Create a function that changes "a" to "@"
-
-# Create a function that changes "o" to "0"
-
-# Create a function that changes "e" to "3"
-
-# Create a function that changes "s" to "$"
-
-# Create a function that changes "b" to "9"
-
-# Create a function that changes "l" to "1"
-
-# Create a function that changes "r" to "4"
-
-# Create a function that changes "i" to "1"
-
-# Create a function that changes "t" to "7"
 
 # Create a function that adds the a number 0-9 to the end
 
