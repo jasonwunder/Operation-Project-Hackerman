@@ -14,7 +14,6 @@ if (sys.version_info < (3, 5)):
 
 # Create a function for the user provied terms
 
-
 def usr_input():
     term_list = []
     # Check for first name
@@ -97,43 +96,35 @@ def usr_input():
     cap2(term_list)
 
 # Create function that takes in master list and combines elements together
-
-
 def term_combine(term_list):
     combine_list = []
     combine_list = list(''.join(entry)
-                        for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(combine_list)
     cap_char1(combine_list)
 
 # Create a function that caps both words
-
-
 def both_cap(term_list):
     cap_list = term_list.copy()
     cap_both_list = []
     for elem in cap_list:
         cap_both_list.append(elem.capitalize())
     cap_both_list = list(''.join(entry)
-                         for entry in itertools.product(cap_both_list, repeat=2))
+        for entry in itertools.product(cap_both_list, repeat=2))
     print(cap_both_list)
 
 # Create a function that caps the second word in the list
-
-
 def cap2(term_list):
     term_list_copy = term_list.copy()
     cap2_list = []
     for elem in term_list_copy:
         cap2_list.append(elem.capitalize())
     cap2_list = list(''.join(entry)
-                     for entry in itertools.product(cap2_list, repeat=2))
+        for entry in itertools.product(cap2_list, repeat=2))
     cap2_list = cap2_list[0].lower() + cap2_list[1:]
     print(cap2_list)
 
 # Create a list that takes in combine_list a caps the first letter of the element
-
-
 def cap_char1(combine_list):
     cap1_list = []
     for elem in combine_list:
@@ -141,76 +132,58 @@ def cap_char1(combine_list):
     print(cap1_list)
 
 # Create a function that adds "_" between the two terms
-
-
 def underscore(term_list):
     underscore_list = []
     underscore_list = list('_'.join(entry)
-                           for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(underscore_list)
 # Create a function that adds "." between the two terms
-
-
 def dot(term_list):
     dot_list = []
     dot_list = list('.'.join(entry)
-                    for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(dot_list)
 # Create a function that adds a "*" between the two terms
-
-
 def star(term_list):
     star_list = []
     star_list = list('*'.join(entry)
-                     for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(star_list)
 # Create a function that adds a "!" between the two terms
-
-
 def explanation(term_list):
     explanation_list = []
     explanation_list = list('!'.join(entry)
-                            for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(explanation_list)
 # Create a function that adds a "$" between the two terms
-
-
 def dollar(term_list):
     dollar_list = []
     dollar_list = list('$'.join(entry)
-                       for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(dollar_list)
 # Create a function that adds a "@" between the two terms
-
-
 def at_sign(term_list):
     at_sign_list = []
     at_sign_list = list('@'.join(entry)
-                        for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(at_sign_list)
 # Create a function that adds a "-" between the two terms
-
-
 def minus_sign(term_list):
     minus_sign_list = []
     minus_sign_list = list('-'.join(entry)
-                           for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(minus_sign_list)
 # Create a function that adds a "%" between the two terms
-
-
 def percent_sign(term_list):
     percent_sign_list = []
     percent_sign_list = list('%'.join(entry)
-                             for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(percent_sign_list)
 # Create a function that adds a "^" between the two terms
-
-
 def carrot_sign(term_list):
     carrot_sign_list = []
     carrot_sign_list = list('^'.join(entry)
-                            for entry in itertools.product(term_list, repeat=2))
+        for entry in itertools.product(term_list, repeat=2))
     print(carrot_sign_list)
 
 
