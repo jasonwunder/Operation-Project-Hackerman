@@ -4,6 +4,7 @@
 import sys
 import os
 import random
+import itertools
 
 # check the version of python that the user is using. if older than version 3, print an error message.
 if (sys.version_info < (3, 5)):
@@ -23,8 +24,8 @@ def usr_input():
 
     nickname = input("Does the target have a known nickname? [y/n]")
     if nickname == "y":
-        nn = input("Enter the targets nickname: ")
-        term_list.append(nn)
+        nn_answ = input("Enter the targets nickname: ")
+        term_list.append(nn_answ)
     else:
         pass
 
@@ -56,14 +57,18 @@ def usr_input():
             term_list.append(input())
         return term_list
     print("The entered terms are: \n",term_list)
+    term_combine(term_list)
 
 # Create function that takes in master list and combines elements together 
-def term_combine():
-    list = usr_input()
-    for element in list:
-        print(element)
+def term_combine(term_list):
+    combine_list = []
+    combine_list = list(''.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(combine_list)
+    
 
-term_combine()
+usr_input()
+
+# Create a function that takes the new list and modifies it
 
 
 # Have user validate if information is correct. If it is not have them enter the terms again.
@@ -71,6 +76,22 @@ term_combine()
 # create a function that looks for date formats within the list
 
 # Create a password generator that intergrates the list that was created by the user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 '''
