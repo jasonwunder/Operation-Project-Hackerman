@@ -5,6 +5,7 @@ import sys
 import os
 import random
 import itertools
+from xml.dom.minidom import Element
 
 # check the version of python that the user is using. if older than version 3, print an error message.
 if (sys.version_info < (3, 5)):
@@ -57,7 +58,17 @@ def usr_input():
             term_list.append(input())
         return term_list
     print("The entered terms are: \n",term_list)
+    #call other functions for use of term_list
     term_combine(term_list)
+    underscore(term_list)
+    dot(term_list)
+    star(term_list)
+    explanation(term_list)
+    dollar(term_list)
+    at_sign(term_list)
+    minus_sign(term_list)
+    percent_sign(term_list)
+    carrot_sign(term_list)
 
 # Create function that takes in master list and combines elements together 
 def term_combine(term_list):
@@ -73,11 +84,59 @@ def cap_char1(combine_list):
         cap1_list.append(elem.capitalize())
     print(cap1_list)
 
-usr_input()
-
 # Create a function that adds "_" between the two terms 
+def underscore(term_list):
+    underscore_list = []
+    underscore_list = list('_'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(underscore_list)
+# Create a function that adds "." between the two terms
+def dot(term_list):
+    dot_list = []
+    dot_list = list('.'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(dot_list)
+# Create a function that adds a "*" between the two terms
+def star(term_list):
+    star_list = []
+    star_list = list('*'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(star_list)
+# Create a function that adds a "!" between the two terms
+def explanation(term_list):
+    explanation_list = []
+    explanation_list = list('!'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(explanation_list)
+# Create a function that adds a "$" between the two terms
+def dollar(term_list):
+    dollar_list = []
+    dollar_list = list('$'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(dollar_list)
+# Create a function that adds a "@" between the two terms
+def at_sign(term_list):
+    at_sign_list = []
+    at_sign_list = list('@'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(at_sign_list)
+# Create a function that adds a "-" between the two terms
+def minus_sign(term_list):
+    minus_sign_list = []
+    minus_sign_list = list('-'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(minus_sign_list)
+# Create a function that adds a "%" between the two terms
+def percent_sign(term_list):
+    percent_sign_list = []
+    percent_sign_list = list('%'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(percent_sign_list)
+# Create a function that adds a "^" between the two terms
+def carrot_sign(term_list):
+    carrot_sign_list = []
+    carrot_sign_list = list('^'.join(entry) for entry in itertools.product(term_list, repeat=2))
+    print(carrot_sign_list)
 
 
+
+    
+
+
+
+usr_input()
         
 
 
