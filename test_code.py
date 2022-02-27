@@ -323,7 +323,7 @@ def change_char(term_list, old_value, new_value):
 # output that list onto a file as a wordlist
 
 
-
+#-_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
 usr_input()
 print(master_list)
 
