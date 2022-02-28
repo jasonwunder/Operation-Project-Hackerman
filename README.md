@@ -14,7 +14,7 @@ The user will be asked a series of questions about the target which include:
 - Phone number area code
 - Favorite sports team
 
-The user will then have the chance to add any additional terms that they may have found on during reconnaissance or any OSINT search.
+The user will then have the chance to add any additional terms that they may have found during reconnaissance or any OSINT search.
 
 
 #
