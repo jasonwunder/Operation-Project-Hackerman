@@ -86,15 +86,6 @@ def usr_input():
 
     # call other functions for use of term_list
     term_combine(term_list)
-    # underscore(term_list)
-    # dot(term_list)
-    # star(term_list)
-    # explanation(term_list)
-    # dollar(term_list)
-    # at_sign(term_list)
-    # minus_sign(term_list)
-    # percent_sign(term_list)
-    # carrot_sign(term_list)
     both_cap(term_list)
     sep_word(term_list, "!")
     sep_word(term_list, "_")
@@ -114,9 +105,6 @@ def usr_input():
     change_char(term_list, "r", "4")
     change_char(term_list, "t", "7")
     change_char(term_list, "i", "1")
-
-
-
 
 # Create function that takes in master list and combines elements together
 def term_combine(term_list):
