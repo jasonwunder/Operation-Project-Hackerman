@@ -96,16 +96,6 @@ def usr_input():
     # percent_sign(term_list)
     # carrot_sign(term_list)
     both_cap(term_list)
-    # cap2(term_list)
-    # a_change_at(term_list, "a", "@")
-    # zero_change(term_list)
-    # three_change(term_list)
-    # dollar_sign(term_list)
-    # nine_change(term_list)
-    # one_change(term_list)
-    # four_change(term_list)
-    # one_i_change(term_list)
-    # seven_change(term_list)
     sep_word(term_list, "!")
     sep_word(term_list, "_")
     sep_word(term_list, "%")
@@ -238,71 +228,13 @@ def sep_word(term_list, value):
 
 # Shorten into on function with a tuple and for loop
 def change_char(term_list, old_value, new_value):
-    # new_char = [(old_value, new_value)]
     new_list = master_list.copy()
     change_char_list = []
     for idx, value in enumerate(new_list):
         new_list[idx] = value.replace(old_value, new_value)
-        change_char_list.append(new_list[idx])
-    for elem in change_char_list:
-        master_list2.append(elem)
-    # print(change_char_list)
+        master_list.append(new_list[idx])
 
 
-# # Create a function that changes "a" to "@"
-# def a_change_at(term_list, old_value, new_value):
-#     new_list = term_list.copy()
-#     for idx, value in enumerate(new_list):
-#         new_list[idx] = value.replace(old_value, new_value)
-#     print(new_list)
-# # Create a function that changes "o" to "0"
-# def zero_change(term_list):
-#     zero_list = term_list.copy()
-#     for idx, value in enumerate(zero_list):
-#         zero_list[idx] = value.replace("o", "0")
-#     print(zero_list)
-# # Create a function that changes "e" to "3"
-# def three_change(term_list):
-#     three_list = term_list.copy()
-#     for idx, value in enumerate(three_list):
-#         three_list[idx] = value.replace("e", "3")
-#     print(three_list)
-# # Create a function that changes "s" to "$"
-# def dollar_sign(term_list):
-#     dollar_replace_list = term_list.copy()
-#     for idx, value in enumerate(dollar_replace_list):
-#         dollar_replace_list[idx] = value.replace("s", "$")
-#     print(dollar_replace_list)
-# # Create a function that changes "b" to "9"
-# def nine_change(term_list):
-#     nine_list = term_list.copy()
-#     for idx, value in enumerate(nine_list):
-#         nine_list[idx] = value.replace("b", "9")
-#     print(nine_list)
-# # Create a function that changes "l" to "1"
-# def one_change(term_list):
-#     one_list = term_list.copy()
-#     for idx, value in enumerate(one_list):
-#         one_list[idx] = value.replace("l", "1")
-#     print(one_list)
-# # Create a function that changes "r" to "4"
-# def four_change(term_list):
-#     four_list = term_list.copy()
-#     for idx, value in enumerate(four_list):
-#         four_list[idx] = value.replace("r", "4")
-#     print(four_list)
-# # Create a function that changes "i" to "1"
-# def one_i_change(term_list):
-#     one_i_list = term_list.copy()
-#     for idx, value in enumerate(one_i_list):
-#         one_i_list[idx] = value.replace("i", "1")
-#     print(one_i_list)
-# # Create a function that changes "t" to "7"
-# def seven_change(term_list):
-#     seven_list = term_list.copy()
-#     for idx, value in enumerate(seven_list):
-#         seven_list[idx] = value.replace("t", "7")
-#     print(seven_list)
 # Create a function that adds syms to end
 
 # Create a function that adds a sym to begaining
@@ -316,17 +248,14 @@ def change_char(term_list, old_value, new_value):
 # Combine the lists again
 
 # Go through that final list and get rid of and element that has less than 6 charaters in it.
-# for elem in final_list:
-#     if len(elem) < 6:
-#         delete elem
-#     return final_list
+
 # output that list onto a file as a wordlist
 
 
 #-_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
 usr_input()
-print(master_list)
-
+for elem in master_list:
+    print(elem)
 for elem in master_list2:
     print(elem)
 print(len(master_list))
