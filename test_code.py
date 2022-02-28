@@ -6,6 +6,7 @@ import sys
 import os
 import random
 import itertools
+from typing import final
 
 
 # check the version of python that the user is using. if older than version 3, print an error message.
@@ -82,7 +83,8 @@ def usr_input():
     else:
         pass
     print("The entered terms are: \n", term_list)
-
+    for elem in term_list:
+        master_list.append(elem)
     # call other functions for use of term_list
     term_combine(term_list)
     both_cap(term_list)
@@ -187,10 +189,17 @@ final_list = master_list + master_list2
 # Go through the list and get rid of duplicates 
 
 # output that list onto a file as a wordlist
-sourceFile = open(ophm.txt, 'w')
-print(final_list, file = sourceFile)
-sourceFile.close()
+def main():
+    # Open a file for writing to and create on if it doesnt exist
+    f = open("test_file.txt", "w+")
+    # Write the data to the file
+    for elem in final_list:
+        print(elem, file = f)
+    # Close the file when done
+    f.close()
 
+if __name__ == "__main__":
+    main()
 
 
 
