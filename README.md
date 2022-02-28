@@ -1,5 +1,25 @@
-# Operation-Project-Hackerman
+
 ![](https://raw.githubusercontent.com/jasonwunder/Operation-Project-Hackerman/main/images/op_hack_man.png)
+#
+Operation Project Hackerman is a unique tool to be used with password cracking tools. It takes in user input about the target by asking for specific information and also allowing the user to add more information. The tool will then provide thousands of combinations of those terms and create a wordlist for the user.
+
+## How it works
+The user will be asked a series of questions about the target which include:
+- First name
+- Middle name
+- Last name
+- Nickname
+- Pets name
+- Date of birth
+- Phone number area code
+- Favorite sports team
+
+The user will then have the chance to add any additional terms that they may have found on during reconnaissance or any OSINT search.
+
+
+#
+
+
 # What's up we are Jason and Christian👋 
 
 
