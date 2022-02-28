@@ -79,7 +79,7 @@ def usr_input():
     else:
         pass
     print("The entered terms are: \n", term_list)
-
+    # Have user validate if information is correct. If it is not have them enter the terms again.
     # call other functions for use of term_list
     term_combine(term_list)
     both_cap(term_list)
@@ -148,23 +148,9 @@ def change_char(term_list, old_value, new_value):
 
 
 
-# Have user validate if information is correct. If it is not have them enter the terms again.
 
-# create a function that looks for date formats within the list
+ 
 
-# Create a password generator that intergrates the list that was created by the user.
-
-# function that make every other variable upper case or lower case
-
-# loop that only upper cases first letter
-
-# function that add all randomly generated birthdates to the end or begining of the element 
-
-# the birthdates can come in 3 versions (1993) or (042893) or (93) len of DOB appendix should be 2 or 4 or 6
-
-# function that add 1 random symbol to the begining or end of element
-
-# common symbols "_" or "!" or "#" or "@" or "O" for "0"
 
 #----------------------------------------------------------
 #--------------TEST CODE HERE___________________________
