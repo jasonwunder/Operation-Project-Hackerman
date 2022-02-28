@@ -1,8 +1,7 @@
 ###################################################################################################
 ############# THIS IS NOT FOR MAIN PRODUCT#################
 ###################################################################################################
-from doctest import master
-from email.utils import collapse_rfc2231_value
+#! /usr/bin/python
 import sys
 import os
 import random
@@ -105,7 +104,12 @@ def usr_input():
     change_char(term_list, "r", "4")
     change_char(term_list, "t", "7")
     change_char(term_list, "i", "1")
-
+    end_sym("!")
+    end_sym("$")
+    end_sym("@")
+    end_sym("*")
+    end_sym("&")
+    end_sym(".")
 # Create function that takes in master list and combines elements together
 def term_combine(term_list):
     combine_list = []
@@ -113,7 +117,6 @@ def term_combine(term_list):
         for entry in itertools.product(term_list, repeat=2))
     for elem in combine_list:
         master_list.append(elem)
-    # print(combine_list)
     cap_char1(combine_list)
 
 # Create a function that caps both words
@@ -126,7 +129,6 @@ def both_cap(term_list):
         for entry in itertools.product(cap_both_list, repeat=2))
     for elem in cap_both_list:
         master_list.append(elem)
-    # print(cap_both_list)
 
 # Create a function that caps the second word in the list
 # def cap2(term_list):
@@ -146,7 +148,6 @@ def cap_char1(combine_list):
         cap1_list.append(elem.capitalize())
     for elem in cap1_list:
         master_list.append(elem)
-    # print(cap1_list)
 
 # Shorten into on function with a tuple and for loop
 def sep_word(term_list, value):
@@ -156,8 +157,42 @@ def sep_word(term_list, value):
     for elem in sep_list:
         master_list.append(elem)
     
-
+# Shorten into on function with a tuple and for loop
+def change_char(term_list, old_value, new_value):
+    new_list = master_list.copy()
+    change_char_list = []
+    for idx, value in enumerate(new_list):
+        new_list[idx] = value.replace(old_value, new_value)
+        master_list.append(new_list[idx])
     
+# Create a function that adds syms to end
+def end_sym(value):
+    new_list = master_list.copy()
+    for elem in new_list:
+        new_elem = elem + value
+        master_list.append(new_elem)
+
+# Create a function that adds a sym to begaining
+
+# Create a function that adds the a number 0-9 to the end
+
+# combine all the lists togehter into one big list
+
+# Create a new list that caps the first letter in the elements of the list
+
+# Combine the lists again
+final_list = master_list + master_list2
+# Go through that final list and get rid of and element that has less than 6 charaters in it.
+
+# Go through the list and get rid of duplicates 
+
+# output that list onto a file as a wordlist
+sourceFile = open(ophm.txt, 'w')
+print(final_list, file = sourceFile)
+sourceFile.close()
+
+
+
 
 # Create a function that adds "_" between the two terms
 # def underscore(term_list):
@@ -214,30 +249,21 @@ def sep_word(term_list, value):
 #         for entry in itertools.product(term_list, repeat=2))
 #     print(carrot_sign_list)
 
-# Shorten into on function with a tuple and for loop
-def change_char(term_list, old_value, new_value):
-    new_list = master_list.copy()
-    change_char_list = []
-    for idx, value in enumerate(new_list):
-        new_list[idx] = value.replace(old_value, new_value)
-        master_list.append(new_list[idx])
 
 
-# Create a function that adds syms to end
 
-# Create a function that adds a sym to begaining
 
-# Create a function that adds the a number 0-9 to the end
 
-# combine all the lists togehter into one big list
 
-# Create a new list that caps the first letter in the elements of the list
 
-# Combine the lists again
 
-# Go through that final list and get rid of and element that has less than 6 charaters in it.
 
-# output that list onto a file as a wordlist
+
+
+
+
+
+
 
 
 #-_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
