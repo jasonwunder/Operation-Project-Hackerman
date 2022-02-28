@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 import os
 import itertools
@@ -164,8 +165,6 @@ def change_char(term_list, old_value, new_value):
 # function that add 1 random symbol to the begining or end of element
 
 # common symbols "_" or "!" or "#" or "@" or "O" for "0"
-
-
 
 #----------------------------------------------------------
 #--------------TEST CODE HERE___________________________
