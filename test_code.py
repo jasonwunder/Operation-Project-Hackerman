@@ -2,6 +2,7 @@
 ############# THIS IS NOT FOR MAIN PRODUCT#################
 ###################################################################################################
 #! /usr/bin/python
+from doctest import master
 import sys
 import os
 import random
@@ -15,7 +16,7 @@ if (sys.version_info < (3, 5)):
     sys.exit(1)
 # Create a master list that every function will append to to make one big list
 master_list = []
-master_list2 = []
+
 # Create a function for the user provied terms
 def usr_input():
     term_list = []
@@ -83,8 +84,7 @@ def usr_input():
     else:
         pass
     print("The entered terms are: \n", term_list)
-    for elem in term_list:
-        master_list.append(elem)
+    master_list = term_list.copy()
     # call other functions for use of term_list
     term_combine(term_list)
     both_cap(term_list)
@@ -131,6 +131,7 @@ def both_cap(term_list):
         for entry in itertools.product(cap_both_list, repeat=2))
     for elem in cap_both_list:
         master_list.append(elem)
+    return master_list
 
 # Create a function that caps the second word in the list
 # def cap2(term_list):
@@ -150,6 +151,7 @@ def cap_char1(combine_list):
         cap1_list.append(elem.capitalize())
     for elem in cap1_list:
         master_list.append(elem)
+    return master_list
 
 # Shorten into on function with a tuple and for loop
 def sep_word(term_list, value):
@@ -158,6 +160,7 @@ def sep_word(term_list, value):
         for entry in itertools.product(term_list, repeat=2))
     for elem in sep_list:
         master_list.append(elem)
+    return master_list
     
 # Shorten into on function with a tuple and for loop
 def change_char(term_list, old_value, new_value):
@@ -165,14 +168,17 @@ def change_char(term_list, old_value, new_value):
     change_char_list = []
     for idx, value in enumerate(new_list):
         new_list[idx] = value.replace(old_value, new_value)
-        master_list.append(new_list[idx])
+    master_list.append(new_list[idx])
+    return master_list
     
 # Create a function that adds syms to end
 def end_sym(value):
     new_list = master_list.copy()
     for elem in new_list:
         new_elem = elem + value
-        master_list.append(new_elem)
+    master_list.append(new_elem)
+    return master_list
+    
 
 # Create a function that adds a sym to begaining
 
@@ -183,7 +189,7 @@ def end_sym(value):
 # Create a new list that caps the first letter in the elements of the list
 
 # Combine the lists again
-final_list = master_list + master_list2
+
 # Go through that final list and get rid of and element that has less than 6 charaters in it.
 
 # Go through the list and get rid of duplicates 
@@ -193,7 +199,7 @@ def main():
     # Open a file for writing to and create on if it doesnt exist
     f = open("test_file.txt", "w+")
     # Write the data to the file
-    for elem in final_list:
+    for elem in master_list:
         print(elem, file = f)
     # Close the file when done
     f.close()
@@ -277,12 +283,10 @@ if __name__ == "__main__":
 
 #-_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
 usr_input()
-for elem in master_list:
-    print(elem)
-for elem in master_list2:
-    print(elem)
+print(master_list)
+
 print(len(master_list))
-print(len(master_list2))
+
 
 
 
