@@ -9,7 +9,6 @@ import random
 import itertools
 from typing import final
 
-
 # check the version of python that the user is using. if older than version 3, print an error message.
 if (sys.version_info < (3, 5)):
     print('Error: Operation Project Hackerman only works with Python 3')
@@ -18,8 +17,6 @@ if (sys.version_info < (3, 5)):
 master_list = []
 
 # Create a function for the user provied terms
-
-
 def usr_input():
     term_list = []
     # Check for first name
@@ -116,8 +113,6 @@ def usr_input():
     end_sym("&")
     end_sym(".")
 # Create function that takes in master list and combines elements together
-
-
 def term_combine():
     master_copy = []
     master_copy = list(''.join(entry)
@@ -127,8 +122,6 @@ def term_combine():
     return master_list
 
 # Create a function that caps both words
-
-
 def both_cap(term_list):
     cap_both_list = []
     for elem in term_list:
@@ -151,8 +144,6 @@ def both_cap(term_list):
 #     print(cap2_list)
 
 # Create a list that takes in combine_list a caps the first letter of the element
-
-
 def cap_char1():
     cap1_list = []
     for elem in master_list:
@@ -162,8 +153,6 @@ def cap_char1():
     return master_list
 
 # Shorten into on function with a tuple and for loop
-
-
 def sep_word(term_list, value):
     sep_list = []
     sep_list = list(value.join(entry)
@@ -173,8 +162,6 @@ def sep_word(term_list, value):
     return master_list
 
 # Shorten into on function with a tuple and for loop
-
-
 def change_char(old_value, new_value):
     new_list = master_list.copy()
     for idx, value in enumerate(new_list):
@@ -184,15 +171,12 @@ def change_char(old_value, new_value):
     return master_list
 
 # Create a function that adds syms to end
-
-
 def end_sym(value):
     new_list = master_list.copy()
     for elem in new_list:
         new_elem = elem + value
     master_list.append(new_elem)
     return master_list
-
 
 # Create a function that adds the a number 0-9 to the end
 
