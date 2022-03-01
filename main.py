@@ -1,16 +1,17 @@
-#!/usr/bin/env python3
+#! /usr/bin/python
+from doctest import master
 import sys
 import os
+import random
 import itertools
+from typing import final
 
 # check the version of python that the user is using. if older than version 3, print an error message.
-if (sys.version_info < (3, 0)):
+if (sys.version_info < (3, 5)):
     print('Error: Operation Project Hackerman only works with Python 3')
     sys.exit(1)
-
 # Create a master list that every function will append to to make one big list
 master_list = []
-master_list2 = []
 
 # Create a function for the user provied terms
 def usr_input():
@@ -79,9 +80,10 @@ def usr_input():
     else:
         pass
     print("The entered terms are: \n", term_list)
-    # Have user validate if information is correct. If it is not have them enter the terms again.
+    for elem in term_list:
+        master_list.append(elem)
     # call other functions for use of term_list
-    term_combine(term_list)
+    term_combine()
     both_cap(term_list)
     sep_word(term_list, "!")
     sep_word(term_list, "_")
@@ -92,73 +94,118 @@ def usr_input():
     sep_word(term_list, "-")
     sep_word(term_list, "*")
     sep_word(term_list, "&")
-    change_char(term_list, "a", "@")
-    change_char(term_list, "s", "$")
-    change_char(term_list, "e", "3")
-    change_char(term_list, "o", "0")
-    change_char(term_list, "b", "9")
-    change_char(term_list, "l", "1")
-    change_char(term_list, "r", "4")
-    change_char(term_list, "t", "7")
-    change_char(term_list, "i", "1")
-
-# Create function that takes in master list and combines elements together 
-def term_combine(term_list):
-    combine_list = []
-    combine_list = list(''.join(entry)
-        for entry in itertools.product(term_list, repeat=2))
-    for elem in combine_list:
+    change_char("a", "@")
+    change_char("s", "$")
+    change_char("e", "3")
+    change_char("o", "0")
+    change_char("b", "9")
+    change_char("l", "1")
+    change_char("r", "4")
+    change_char("t", "7")
+    change_char("i", "1")
+    end_sym("!")
+    end_sym("$")
+    end_sym("@")
+    end_sym("*")
+    end_sym("&")
+    end_sym(".")
+# Create function that takes in master list and combines elements together
+def term_combine():
+    master_copy = []
+    master_copy = list(''.join(entry)
+                       for entry in itertools.product(master_list, repeat=2))
+    for elem in master_copy:
         master_list.append(elem)
-    # print(combine_list)
-    cap_char1(combine_list)
+    return master_list
 
 # Create a function that caps both words
 def both_cap(term_list):
-    cap_list = term_list.copy()
     cap_both_list = []
-    for elem in cap_list:
+    for elem in term_list:
         cap_both_list.append(elem.capitalize())
     cap_both_list = list(''.join(entry)
-        for entry in itertools.product(cap_both_list, repeat=2))
+                         for entry in itertools.product(cap_both_list, repeat=2))
     for elem in cap_both_list:
         master_list.append(elem)
+    return master_list
 
-# Create a list that takes in combine_list a caps the first letter of the element 
-def cap_char1(combine_list):
+# Create a function that caps the second word in the list
+# def cap2(term_list):
+#     term_list_copy = term_list.copy()
+#     cap2_list = []
+#     for elem in term_list_copy:
+#         cap2_list.append(elem.capitalize())
+#     cap2_list = list(''.join(entry)
+#         for entry in itertools.product(cap2_list, repeat=2))
+
+#     print(cap2_list)
+
+# Create a list that takes in combine_list a caps the first letter of the element
+def cap_char1():
     cap1_list = []
-    for elem in combine_list:
+    for elem in master_list:
         cap1_list.append(elem.capitalize())
-    print(cap1_list)
+    for elem in cap1_list:
+        master_list.append(elem)
+    return master_list
 
-# Function that adds a sym inbetween the two terms
+# Shorten into on function with a tuple and for loop
 def sep_word(term_list, value):
     sep_list = []
     sep_list = list(value.join(entry)
-        for entry in itertools.product(term_list, repeat=2))
+                    for entry in itertools.product(term_list, repeat=2))
     for elem in sep_list:
         master_list.append(elem)
+    return master_list
 
-# Function that swaps out values
-def change_char(term_list, old_value, new_value):
+# Shorten into on function with a tuple and for loop
+def change_char(old_value, new_value):
     new_list = master_list.copy()
-    change_char_list = []
     for idx, value in enumerate(new_list):
         new_list[idx] = value.replace(old_value, new_value)
-        master_list.append(new_list[idx])
+    for elem in new_list:
+        master_list.append(elem)
+    return master_list
+
+# Create a function that adds syms to end
+def end_sym(value):
+    new_list = master_list.copy()
+    for elem in new_list:
+        new_elem = elem + value
+    master_list.append(new_elem)
+    return master_list
+
+# Create a function that adds the a number 0-9 to the end
+
+# combine all the lists togehter into one big list
+
+# Create a new list that caps the first letter in the elements of the list
+
+# Combine the lists again
+
+# Go through that final list and get rid of and element that has less than 6 charaters in it.
+
+# Go through the list and get rid of duplicates
+
+# # output that list onto a file as a wordlist
+# def main():
+#     # Open a file for writing to and create on if it doesnt exist
+#     f = open("test_file.txt", "w+")
+#     # Write the data to the file
+#     for elem in master_list:
+#         print(elem, file = f)
+#     # Close the file when done
+#     f.close()
+
+# if __name__ == "__main__":
+#     main()
 
 
-
-
- 
-
-
-#----------------------------------------------------------
-#--------------TEST CODE HERE___________________________
-#--------------------------------------------------------
+# -_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
 usr_input()
-for elem in master_list:
-    print(elem)
-for elem in master_list2:
-    print(elem)
+# print(master_list)
+# for elem in master_list:
+#     print(elem)
 print(len(master_list))
-print(len(master_list2))
+
+
