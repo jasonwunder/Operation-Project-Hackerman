@@ -18,6 +18,8 @@ if (sys.version_info < (3, 5)):
 master_list = []
 
 # Create a function for the user provied terms
+
+
 def usr_input():
     term_list = []
     # Check for first name
@@ -84,9 +86,10 @@ def usr_input():
     else:
         pass
     print("The entered terms are: \n", term_list)
-    master_list = term_list.copy()
+    for elem in term_list:
+        master_list.append(elem)
     # call other functions for use of term_list
-    term_combine(term_list)
+    term_combine()
     both_cap(term_list)
     sep_word(term_list, "!")
     sep_word(term_list, "_")
@@ -97,15 +100,15 @@ def usr_input():
     sep_word(term_list, "-")
     sep_word(term_list, "*")
     sep_word(term_list, "&")
-    change_char(term_list, "a", "@")
-    change_char(term_list, "s", "$")
-    change_char(term_list, "e", "3")
-    change_char(term_list, "o", "0")
-    change_char(term_list, "b", "9")
-    change_char(term_list, "l", "1")
-    change_char(term_list, "r", "4")
-    change_char(term_list, "t", "7")
-    change_char(term_list, "i", "1")
+    change_char("a", "@")
+    change_char("s", "$")
+    change_char("e", "3")
+    change_char("o", "0")
+    change_char("b", "9")
+    change_char("l", "1")
+    change_char("r", "4")
+    change_char("t", "7")
+    change_char("i", "1")
     end_sym("!")
     end_sym("$")
     end_sym("@")
@@ -113,22 +116,25 @@ def usr_input():
     end_sym("&")
     end_sym(".")
 # Create function that takes in master list and combines elements together
-def term_combine(term_list):
-    combine_list = []
-    combine_list = list(''.join(entry)
-        for entry in itertools.product(term_list, repeat=2))
-    for elem in combine_list:
+
+
+def term_combine():
+    master_copy = []
+    master_copy = list(''.join(entry)
+                       for entry in itertools.product(master_list, repeat=2))
+    for elem in master_copy:
         master_list.append(elem)
-    cap_char1(combine_list)
+    return master_list
 
 # Create a function that caps both words
+
+
 def both_cap(term_list):
-    cap_list = term_list.copy()
     cap_both_list = []
-    for elem in cap_list:
+    for elem in term_list:
         cap_both_list.append(elem.capitalize())
     cap_both_list = list(''.join(entry)
-        for entry in itertools.product(cap_both_list, repeat=2))
+                         for entry in itertools.product(cap_both_list, repeat=2))
     for elem in cap_both_list:
         master_list.append(elem)
     return master_list
@@ -145,42 +151,48 @@ def both_cap(term_list):
 #     print(cap2_list)
 
 # Create a list that takes in combine_list a caps the first letter of the element
-def cap_char1(combine_list):
+
+
+def cap_char1():
     cap1_list = []
-    for elem in combine_list:
+    for elem in master_list:
         cap1_list.append(elem.capitalize())
     for elem in cap1_list:
         master_list.append(elem)
     return master_list
 
 # Shorten into on function with a tuple and for loop
+
+
 def sep_word(term_list, value):
     sep_list = []
     sep_list = list(value.join(entry)
-        for entry in itertools.product(term_list, repeat=2))
+                    for entry in itertools.product(term_list, repeat=2))
     for elem in sep_list:
         master_list.append(elem)
     return master_list
-    
+
 # Shorten into on function with a tuple and for loop
-def change_char(term_list, old_value, new_value):
+
+
+def change_char(old_value, new_value):
     new_list = master_list.copy()
-    change_char_list = []
     for idx, value in enumerate(new_list):
         new_list[idx] = value.replace(old_value, new_value)
-    master_list.append(new_list[idx])
+    for elem in new_list:
+        master_list.append(elem)
     return master_list
-    
+
 # Create a function that adds syms to end
+
+
 def end_sym(value):
     new_list = master_list.copy()
     for elem in new_list:
         new_elem = elem + value
     master_list.append(new_elem)
     return master_list
-    
 
-# Create a function that adds a sym to begaining
 
 # Create a function that adds the a number 0-9 to the end
 
@@ -192,137 +204,28 @@ def end_sym(value):
 
 # Go through that final list and get rid of and element that has less than 6 charaters in it.
 
-# Go through the list and get rid of duplicates 
+# Go through the list and get rid of duplicates
 
-# output that list onto a file as a wordlist
-def main():
-    # Open a file for writing to and create on if it doesnt exist
-    f = open("test_file.txt", "w+")
-    # Write the data to the file
-    for elem in master_list:
-        print(elem, file = f)
-    # Close the file when done
-    f.close()
+# # output that list onto a file as a wordlist
+# def main():
+#     # Open a file for writing to and create on if it doesnt exist
+#     f = open("test_file.txt", "w+")
+#     # Write the data to the file
+#     for elem in master_list:
+#         print(elem, file = f)
+#     # Close the file when done
+#     f.close()
 
-if __name__ == "__main__":
-    main()
-
-
-
-# Create a function that adds "_" between the two terms
-# def underscore(term_list):
-#     underscore_list = []
-#     underscore_list = list('_'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(underscore_list)
-# Create a function that adds "." between the two terms
-# def dot(term_list):
-#     dot_list = []
-#     dot_list = list('.'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(dot_list)
-# Create a function that adds a "*" between the two terms
-# def star(term_list):
-#     star_list = []
-#     star_list = list('*'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(star_list)
-# Create a function that adds a "!" between the two terms
-# def explanation(term_list):
-#     explanation_list = []
-#     explanation_list = list('!'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(explanation_list)
-# Create a function that adds a "$" between the two terms
-# def dollar(term_list):
-#     dollar_list = []
-#     dollar_list = list('$'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(dollar_list)
-# Create a function that adds a "@" between the two terms
-# def at_sign(term_list):
-#     at_sign_list = []
-#     at_sign_list = list('@'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(at_sign_list)
-# Create a function that adds a "-" between the two terms
-# def minus_sign(term_list):
-#     minus_sign_list = []
-#     minus_sign_list = list('-'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(minus_sign_list)
-# Create a function that adds a "%" between the two terms
-# def percent_sign(term_list):
-#     percent_sign_list = []
-#     percent_sign_list = list('%'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(percent_sign_list)
-# Create a function that adds a "^" between the two terms
-# def carrot_sign(term_list):
-#     carrot_sign_list = []
-#     carrot_sign_list = list('^'.join(entry)
-#         for entry in itertools.product(term_list, repeat=2))
-#     print(carrot_sign_list)
+# if __name__ == "__main__":
+#     main()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#-_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
+# -_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
 usr_input()
-print(master_list)
-
+# print(master_list)
+for elem in master_list:
+    print(elem)
 print(len(master_list))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 '''
