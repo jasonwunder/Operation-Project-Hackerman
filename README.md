@@ -17,10 +17,10 @@ The user will be asked a series of questions about the target which include:
 The user will then have the chance to add any additional terms that they may have found during reconnaissance or any OSINT search.
 
 
-#
 
 
-# What's up we are Jason and Christian👋 
+
+# About the author's Jason and Christian 
 
 
 
