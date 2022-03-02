@@ -31,8 +31,7 @@ The user will then have the chance to add any additional terms that they may hav
 - 🥅 2022 Goals: Learn more about cyber sec, networks, and python
 - ⚡ Fun fact: "Fish can cough"
 
-## We have created a random password generator for all our redteam/pentester friends ##
-Our generator intakes a few preset terms and any extra optional terms and then creates a txt.file of all of the randomly generated passwords that could be potentially used for a persons login information.
+
 
 
 ### Languages and Tools:
