@@ -201,7 +201,7 @@ def end_sym(value, master_list):
     for elem in master_list:
         new_elem = elem + value
         new_list.append(new_elem)
-    return new_list
+    return new_list 
 
 # Create a function that adds the a number 0-9 to the end
 
