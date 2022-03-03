@@ -4,7 +4,6 @@ import sys
 import os
 import random
 import itertools
-from tkinter.font import BOLD
 from turtle import position
 from typing import final
 from tqdm import tqdm
@@ -34,8 +33,6 @@ print("""\
 if (sys.version_info < (3, 5)):
     print('Error: Operation Project Hackerman only works with Python 3')
     sys.exit(1)
-# Create a master list that every function will append to to make one big list
-
 
 # class colors:
 reset = '\033[0m'
@@ -47,7 +44,7 @@ lightgreen = '\033[92m'
 yellow = '\033[93m'
 
 # bold_red = "\033[1;31;40m"
-print(bold + "Welcome \nThis tool requires that you know some information about the target." + reset)
+print(bold + "Operation Project Hackerman - Version 1.0 \nWelcome \nThis tool requires that you know some information about the target." + reset)
 contin = input("Select yes to continue: [y/n] ")
 if contin == "y":
     loop = tqdm(total=5000, position=0, leave=False)
