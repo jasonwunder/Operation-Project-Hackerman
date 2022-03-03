@@ -4,7 +4,10 @@ import sys
 import os
 import random
 import itertools
+from turtle import position
 from typing import final
+from tqdm import tqdm
+
 
 print("""\
  ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗     
@@ -30,11 +33,29 @@ print("""\
 if (sys.version_info < (3, 5)):
     print('Error: Operation Project Hackerman only works with Python 3')
     sys.exit(1)
-# Create a master list that every function will append to to make one big list
-master_list = []
 
+# class colors:
+reset = '\033[0m'
+bold = '\033[01m'
+disable = '\033[02m'
+underline = '\033[04m'
+red = '\033[31m'
+lightgreen = '\033[92m'
+yellow = '\033[93m'
+
+# bold_red = "\033[1;31;40m"
+print(bold + "Operation Project Hackerman - Version 1.0 \nWelcome \nThis tool requires that you know some information about the target." + reset)
+contin = input("Select yes to continue: [y/n] ")
+if contin == "y":
+    loop = tqdm(total=5000, position=0, leave=False)
+    for k in range(5000):
+        loop.set_description("Loading...".format(k))
+        loop.update(1)
+    loop.close()
 # Create a function for the user provied terms
 def usr_input():
+    master_list = []
+    file_name = input("Enter name for output file: ")
     term_list = []
     # Check for first name
     first_name = input("Enter targets first name: ")
@@ -100,54 +121,45 @@ def usr_input():
     else:
         pass
     print("The entered terms are: \n", term_list)
-    for elem in term_list:
-        master_list.append(elem)
+    master_list += term_list
+
     # call other functions for use of term_list
-    term_combine()
-    both_cap(term_list)
-    sep_word(term_list, "!")
-    sep_word(term_list, "_")
-    sep_word(term_list, "%")
-    sep_word(term_list, "$")
-    sep_word(term_list, "@")
-    sep_word(term_list, ".")
-    sep_word(term_list, "-")
-    sep_word(term_list, "*")
-    sep_word(term_list, "&")
-    change_char("a", "@")
-    change_char("s", "$")
-    change_char("e", "3")
-    change_char("o", "0")
-    change_char("b", "9")
-    change_char("l", "1")
-    change_char("r", "4")
-    change_char("t", "7")
-    change_char("i", "1")
-    end_sym("!")
-    end_sym("$")
-    end_sym("@")
-    end_sym("*")
-    end_sym("&")
-    end_sym(".")
+    master_list = term_combine(term_list)
+    # master_list += combined_list
+    combined_list = master_list
+    master_list += both_cap(term_list)
+    combined_list = master_list
+    for symbol in ['!', '_', '%', "$", "@", ".", "-", "*", "&"]:
+        master_list += sep_word(term_list, symbol)
+    combined_list = master_list
+    for old_value, new_value in [("a", "@"), ("s", "$"), ("e", "3"), ("o", "0"), ("l", "1"), ("r", "4"), ("i", "1")]:
+        master_list += change_char(old_value, new_value, combined_list)
+    combined_list = master_list
+    for sym in ["!", "$", "@", "&", "."]:
+        master_list += end_sym(sym, combined_list)
+    # Open a file for writing to and create on if it doesnt exist
+    f = open(file_name, "w+")
+    # Write the data to the file
+    for elem in set(master_list):
+        if len(elem) >= 8:
+            f.write(elem + "\n")
+    # Close the file when done
+    f.close()
+
+
 # Create function that takes in master list and combines elements together
-def term_combine():
+def term_combine(master_list):
     master_copy = []
-    master_copy = list(''.join(entry)
-                       for entry in itertools.product(master_list, repeat=2))
-    for elem in master_copy:
-        master_list.append(elem)
-    return master_list
+    master_copy = list(''.join(entry) for entry in itertools.product(master_list, repeat=2))
+    return master_copy
 
 # Create a function that caps both words
 def both_cap(term_list):
     cap_both_list = []
     for elem in term_list:
         cap_both_list.append(elem.capitalize())
-    cap_both_list = list(''.join(entry)
-                         for entry in itertools.product(cap_both_list, repeat=2))
-    for elem in cap_both_list:
-        master_list.append(elem)
-    return master_list
+    cap_both_list = list(''.join(entry) for entry in itertools.product(cap_both_list, repeat=2))
+    return cap_both_list
 
 # Create a function that caps the second word in the list
 # def cap2(term_list):
@@ -165,35 +177,28 @@ def cap_char1():
     cap1_list = []
     for elem in master_list:
         cap1_list.append(elem.capitalize())
-    for elem in cap1_list:
-        master_list.append(elem)
-    return master_list
+    return cap1_list
 
 # Shorten into on function with a tuple and for loop
 def sep_word(term_list, value):
     sep_list = []
-    sep_list = list(value.join(entry)
-                    for entry in itertools.product(term_list, repeat=2))
-    for elem in sep_list:
-        master_list.append(elem)
-    return master_list
+    sep_list = list(value.join(entry) for entry in itertools.product(term_list, repeat=2))
+    return sep_list
 
 # Shorten into on function with a tuple and for loop
-def change_char(old_value, new_value):
+def change_char(old_value, new_value, master_list):
     new_list = master_list.copy()
     for idx, value in enumerate(new_list):
         new_list[idx] = value.replace(old_value, new_value)
-    for elem in new_list:
-        master_list.append(elem)
-    return master_list
+    return new_list
 
 # Create a function that adds syms to end
-def end_sym(value):
-    new_list = master_list.copy()
-    for elem in new_list:
+def end_sym(value, master_list):
+    new_list = []
+    for elem in master_list:
         new_elem = elem + value
-    master_list.append(new_elem)
-    return master_list
+        new_list.append(new_elem)
+    return new_list 
 
 # Create a function that adds the a number 0-9 to the end
 
@@ -208,24 +213,10 @@ def end_sym(value):
 # Go through the list and get rid of duplicates
 
 # # output that list onto a file as a wordlist
-# def main():
-#     # Open a file for writing to and create on if it doesnt exist
-#     f = open("test_file.txt", "w+")
-#     # Write the data to the file
-#     for elem in master_list:
-#         print(elem, file = f)
-#     # Close the file when done
-#     f.close()
-
-# if __name__ == "__main__":
-#     main()
 
 
-# -_-_-_-_-_-_-_-_-_-_-_-_- TEST CODE -_-_-_-_-_-_-_-_-_-_-_-_-_-
-usr_input()
-# print(master_list)
-# for elem in master_list:
-#     print(elem)
-print(len(master_list))
+def main():
+    usr_input()
 
-
+if __name__ == "__main__":
+    main()
