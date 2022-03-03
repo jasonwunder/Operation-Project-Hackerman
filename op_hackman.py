@@ -146,7 +146,6 @@ def usr_input():
     # Close the file when done
     f.close()
 
-
 # Create function that takes in master list and combines elements together
 def term_combine(master_list):
     master_copy = []
@@ -160,17 +159,6 @@ def both_cap(term_list):
         cap_both_list.append(elem.capitalize())
     cap_both_list = list(''.join(entry) for entry in itertools.product(cap_both_list, repeat=2))
     return cap_both_list
-
-# Create a function that caps the second word in the list
-# def cap2(term_list):
-#     term_list_copy = term_list.copy()
-#     cap2_list = []
-#     for elem in term_list_copy:
-#         cap2_list.append(elem.capitalize())
-#     cap2_list = list(''.join(entry)
-#         for entry in itertools.product(cap2_list, repeat=2))
-
-#     print(cap2_list)
 
 # Create a list that takes in combine_list a caps the first letter of the element
 def cap_char1():
@@ -199,21 +187,6 @@ def end_sym(value, master_list):
         new_elem = elem + value
         new_list.append(new_elem)
     return new_list 
-
-# Create a function that adds the a number 0-9 to the end
-
-# combine all the lists togehter into one big list
-
-# Create a new list that caps the first letter in the elements of the list
-
-# Combine the lists again
-
-# Go through that final list and get rid of and element that has less than 6 charaters in it.
-
-# Go through the list and get rid of duplicates
-
-# # output that list onto a file as a wordlist
-
 
 def main():
     usr_input()
