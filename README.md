@@ -53,6 +53,8 @@ The user will then have the chance to add any additional terms that they may hav
 ### After the file is created
 Once the terms are selected and confirmed by the user, the tool will then create a word list file containing the terms that were entered. The file will have thousands of combinations of the words that include the most common character swaps and symbols. 
 
+![](https://raw.githubusercontent.com/jasonwunder/Operation-Project-Hackerman/main/images/five.PNG)
+
 The user will then be able to use a tool such as hydra, to perform a brute force attack against the target.
 
 #
