@@ -13,6 +13,7 @@ The user will be promted to create the name that they would like the word list f
 
 ![](https://raw.githubusercontent.com/jasonwunder/Operation-Project-Hackerman/main/images/two.PNG)
 
+### Creating terms
 The user will be asked a series of questions about the target which include:
 - First name
 - Middle name
