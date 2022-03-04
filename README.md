@@ -10,7 +10,9 @@ Operation Project Hackerman was created to work with a brute force password atta
 ## How it works
 ### File creation
 The user will be promted to create the name that they would like the word list file to be named.
+
 ![](https://raw.githubusercontent.com/jasonwunder/Operation-Project-Hackerman/main/images/two.PNG)
+
 The user will be asked a series of questions about the target which include:
 - First name
 - Middle name
