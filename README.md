@@ -52,7 +52,10 @@ The user will then be able to use a tool such as hydra, to perform a brute force
 #
 
 ## Requirements 
-
+In order to use this tool you must have tqdm installed
+### How to install tqdm
+In command line run the following command
+pip install tqdm
 
 
 
