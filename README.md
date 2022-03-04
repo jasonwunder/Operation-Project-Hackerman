@@ -6,6 +6,7 @@ Operation Project Hackerman is a unique tool to be used with password cracking t
 ## Why is was created
 Operation Project Hackerman was created to work with a brute force password attack, specifically against SSH. Having a custom-curated word list of potential passwords fills an empty void in recon. The standard terms that the user is asked to enter are the most common terms that non-technical/non-security oriented individuals will use in their passwords. 
 
+![](https://raw.githubusercontent.com/jasonwunder/Operation-Project-Hackerman/main/images/one.PNG)
 ## How it works
 The user will be asked a series of questions about the target which include:
 - First name
