@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/env python3
 from doctest import master
 import re
 import sys
